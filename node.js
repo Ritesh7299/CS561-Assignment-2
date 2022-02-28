@@ -3,6 +3,8 @@ var express = require('express')
 var app = express()
 var cors = require('cors')
 let token = ["eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"]
+const serverless = require('serverless-http');
+module.exports.handler = serverless(app);
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
